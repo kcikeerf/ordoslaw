@@ -1,0 +1,22 @@
+<div class="common_dialog_div">
+您确定删除以下回复吗？
+</div>
+
+<div class="common_dialog_content">
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>ID:</b></span>
+  <span class="common_dialog_right_span">{{answer.id}}</span></div>
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>名字:</b></span>
+  <span class="common_dialog_right_span">{{answer.contact.display_name}}</span></div>
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>回复时间:</b></span>
+  <span class="common_dialog_right_span">{{answer.created_at.strftime('%Y/%m/%d %H:%M')}}</span></div>
+</div>
+
+<div class="common_dialog_div">
+  <form id="answer_delete_form">
+    <input type="hidden" name='id' value='{{answer.id}}' />
+  </form>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="post_from_answer_panel('/admin/answer/delete', 'answer_delete_form')">OK</a>
+</div>

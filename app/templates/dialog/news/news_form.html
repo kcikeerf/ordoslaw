@@ -1,0 +1,25 @@
+<div class="common_dialog_content">
+  <form id="news_form">
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span news"></span>
+  <span class="common_dialog_right_span news">*: 必添项</span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span news">标题*：</span>
+  <span class="common_dialog_right_span news">
+    <input type="text" name="subject" value="{% if news and news.subject %}{{news.subject}}{% endif %}" maxlength="256"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span news">正文*：</span>
+  <span class="common_dialog_right_span news">
+    <textarea name="news" value="" rows="10" cols="50" maxlength="4000">{% if news and news.body %}{{news.body}}{% endif %}</textarea></span>
+  <input type="hidden" name="id" value="{% if news and news.id %}{{news.id}}{% endif %}">
+  </div>
+
+  </form>
+
+</div>
+

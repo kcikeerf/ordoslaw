@@ -1,0 +1,43 @@
+{% autoescape Flase %}
+<span class="easyui-linkbutton" onclick="open_common_dialog('添加法律法规', '/admin/dialog/laws/new')">添加</span>
+{% for l in l_list  %}
+<div class="zaixianfalv_1">
+  <div class="zaixianfalv_1_title">
+    <div>
+    <span> 
+    <input id="laws_{{l.id}}" type="hidden" value="{{l.id}}">
+    <b>标题:</b> {{l.subject}},&nbsp;
+    <b>类别:</b> 
+{% if l.category == 'xingfa' %}
+    刑法
+{% elif l.category == 'minshangfa' %}
+    民商法
+{% elif l.category == 'xingzhengfa' %}
+    行政法
+{% elif l.category == 'others' %}
+    其他
+{% else %}
+    其他
+{% endif %}
+,&nbsp;
+    <b>发表时间：</b> {{l.created_at.strftime('%Y/%m/%d %H:%M')}}
+    </span>
+    </div>
+    <div>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('编辑法律法规', '/admin/dialog/laws/edit?id={{l.id}}')">
+      编辑
+    </span>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('删除法律法规', '/admin/dialog/laws/delete?id={{l.id}}')">
+      删除
+    </span>
+    </div>
+  </div>
+  <div class="zaixianfalv_1_nr">{{l.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}<br></div>
+</div>
+{% endfor %}
+{% endautoescape %}
+
+{% import "admin/list_pagination.html" as lp %}
+{{ lp.fenye('laws', '/admin/laws/list', pagination) }}

@@ -1,0 +1,163 @@
+{% extends './base.html' %}
+{% block content %}
+{% for msg in get_flashed_messages() %}
+{% if msg[0]=='w' or msg[0]=='e' %}
+<div style='background-color: #FF2400; text-align: center;'>{{ msg[1:] }}</div>
+<div style='height: 1px; display: block-inline;'></div>
+{% else %}
+<div style='background-color: #C3FDB8; text-align: center;'>{{ msg[1:] }}</div>
+<div style='height: 1px; display: block-inline;'></div>
+{% endif  %}
+{% endfor %}
+
+<div style='display: block; text-align: center;'>
+
+<form method='POST' action='/question/new'>
+<div><span style="color: red;">*</span><span>: 必添项</span></div>
+<table class="question_t">
+
+<!--Line 1-->
+<tr>
+<td>
+名字
+</td>
+<td>
+<input type="text" name="display_name" value="
+{% if form and form['display_name']  %}
+{{form['display_name']}}
+{% endif %}
+">
+</td>
+<td>
+类别
+</td>
+<td>
+    <select name="category">
+      <option value="zixun" {% if form and form['category'] == 'zixun' %} selected {% endif %}>咨询</option>
+      <option value="qiuzhu" {% if form and form['category'] == 'qiuzhu' %} selected  {% endif %}>求助</option>
+      <option value="jianyi" {% if form and form['category'] == 'jianyi' %} selected {% endif %}>建议</option>
+    </select>
+</td>
+</tr>
+
+
+<!--Line 2-->
+<tr>
+<td>
+QQ
+</td>
+<td>
+<input type="text" name="qq" size=50 value="
+{% if form and form['qq']  %}
+{{form['qq']}}
+{% endif %}
+">
+</td>
+<td>
+微信号
+</td>
+<td>
+<input type="text" name="wechat" size=50 value="
+{% if form and  form['wechat']  %}
+{{form['wechat']}}
+{% endif %}
+">
+</td>
+</tr>
+
+
+<!--Line 3-->
+<tr>
+<td>
+电话
+</td>
+<td>
+<input type="text" name="telephone" size=50 value="
+{% if form and form['telephone']  %}
+{{form['telephone']}}
+{% endif %}
+">
+</td>
+<td>
+邮箱
+</td>
+<td>
+<input type="text" name="email" size=50 value="
+{% if form and  form['email']  %}
+{{form['email']}}
+{% endif %}
+">
+</td>
+</tr>
+
+<!--Line 3-->
+<tr>
+<td>
+地址
+</td>
+<td>
+<input type="text" name="address" size=50 value="
+{% if form and form['address']  %}
+{{form['address']}}
+{% endif %}
+">
+</td>
+<td>
+邮编
+</td>
+<td>
+<input type="text" name="postcode" size=50 value="
+{% if form and  form['postcode']  %}
+{{form['postcode']}}
+{% endif %}
+">
+</td>
+</tr>
+
+<!--Line 4-->
+<tr>
+<td>
+<span>标题</span><span style="color: red;">*</span>
+</td>
+<td colspan="3">
+<input type="text" name="subject" size=120 class="colspan" value="
+{% if form and form['subject']  %}
+{{form['subject']}}
+{% endif %}
+">
+</td>
+</tr>
+
+<!--Line 5-->
+<tr>
+<td>
+<span>内容</span><span style="color: red;">*</span>
+</td>
+<td colspan="3">
+<textarea name="question" class="content" value="" rows="20" size="1000" maxlength="1000">{% if form and form['question']  %}{{form['question']}}{% endif %}</textarea>
+</td>
+</tr>
+
+<!--Line 6-->
+<tr>
+<td>
+<span>验证码</span><span style="color: red;">*</span>
+</td>
+<td colspan="3">
+<span style="float:left">
+<image src="/getcode">
+</span>
+<span style="float:left">
+请输入验证码：<input type="text" name="verifycode" style="width: 100px;height: 20px;" value="">
+</span>
+</td>
+</tr>
+
+
+</table>
+
+<input type="submit" value="提交">
+
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends './base.html' %}
+{% block content %}
+
+  <div class="main">
+
+     <div>
+        <span style="display: block;float:left; width: 65%;">
+          <img src="/static/images/tupian.gif" style="float:left; margin:0 0 0 0;">
+        </span>
+        <span style="display: block;float:right; width: 35%;">
+
+
+       <div class="zaixian" style="margin-top:5px;">
+         <div class="title_top">
+            <div class="title"><a href="/aboutus">网站简介</a></div>
+            <div class="clear"></div>
+         </div>
+         <div class="zaixian_nr">
+            <div id="" class="easyui-panel" title="" style="width: 350px;  display: block;height:200px;;padding:10px;">
+               本站由一群工作在司法事业一线的年轻法官、检察官和律师创建，旨在为鄂尔多斯地区群众提供免费的法律咨询服务和诉讼引导服务。鄂尔多斯法律咨询网 | 鄂尔多斯律师咨询网，您身边的免费法律顾问。
+            </div>
+         </div>
+       </div>
+
+
+          <!--fieldset style="width: auto;height: 205px;">
+            <legend>业务介绍</legend>
+            <div style="width: auto;display:block;word-wrap: break-word;border: 1px;vertical-align: middle;">
+               本站由一群工作在司法事业一线的年轻法官、检察官和律师创建，旨在为鄂尔多斯地区群众提供免费的法律咨询服务和诉讼引导服务。鄂尔多斯法律咨询网，您身边的免费法律顾问。
+            </div>
+          </fieldset-->
+        </span>
+     </div>
+
+
+    <div>
+
+       <span style="display: block;float:left; width: 65%;margin: 15px 0 0 0;">
+       <div class="zaixian_left" style="margin-top:5px;">
+         <div class="title_top">
+            <div class="title"><a href="/zaixianfalv">免费法律咨询</a></div>
+            <a href="/zaixianfalv"><img src="static/images/more2.gif" border="0"></a>
+            
+            <a href="/question/new" target='_self'><img src="/static/images/anniu_zhixun_at_list.png" height="19px" border="0"></a>
+
+            <div class="clear"></div>
+         </div>
+         <div class="zaixian_nr">
+            <div id="" 
+                 class="easyui-panel" 
+                 title="" 
+                 style="display: block inline; width: 620px;height:675px;padding:0 10px 0 10px;"
+                 data-options="href:'/question/latest_list'">
+            </div>
+         </div>
+       </div> 
+       </span>
+ 
+       <span style="display: block;float:right; width: 35%;">
+       <div class="zaixian" style="margin-top:5px;">
+         <div class="title_top">
+            <div class="title"><a href="/news/list">法制新闻</a></div>
+            <a href="/news/list"><img src="static/images/more2.gif" border="0"></a>
+            <div class="clear"></div>
+         </div>
+         <div class="zaixian_nr">
+            <div id="" class="easyui-panel" title="" style="width: 350px; display: block;height:320px;;padding:0 10px 0 10px;" 
+                 data-options="href:'/news/latest_list'">
+            </div>
+         </div>
+       </div>
+
+       <div class="zaixian" style="margin-top:5px;">
+          <div class="title_top">
+            <div class="title"><a href="/laws/list">法律法规</a></div>
+            <a href="/laws/list"><img src="static/images/more2.gif" border="0"></a>
+            <div class="clear"></div>
+          </div>
+          <div class="zaixian_nr">
+             <div id="" class="easyui-panel" title="" style="width: 350px;height:320px;;padding:0 10px 0 10px;"             
+                  data-options="href:'/laws/latest_list'">
+             </div>
+          </div>
+       </div>
+       </span>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+
+{% endblock%}

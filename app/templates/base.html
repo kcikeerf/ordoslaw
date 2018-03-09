@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="all">
+<meta name="location" content="province=内蒙古;city=鄂尔多斯市;coord=109.995541,39.827839">
+
+<title>鄂尔多斯法律咨询网 | 鄂尔多斯律师咨询网</title>
+{% assets "base_js" %}
+        <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
+{% assets "base_css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+{% endassets %}
+<!--script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+            
+</head>
+<body>
+<div class="juzhong">
+  <div class="top">
+    <div class="top_top"><span style="float:left; margin-left:14px;">欢迎访问鄂尔多斯法律咨询网 | 鄂尔多斯律师咨询网！</span>
+      <div class="clear"></div>
+    </div>
+    <div class="logo_bg">
+      <span style="display: block;float:left">
+        <img src="/static/images/logo.jpg" style="float:left; margin:0 0 0 0;opacity: 0.7;"></span>
+      <!--span style="display: block;float:left; text-align: middle;margin: 30px 0px 0px 30px;"-->
+        <!--font style="font-size: 40px;color:white;padding: 5px 0px 5px 0px;"-->
+      <span style="display: block;float:left;">
+<img src="/static/images/title.png" style=" float:left;" >
+      </span>
+      <!--img src="/static/images/logo_bg.gif" width="450" height="100"  style=" float:left;" -->
+      <span id="current_url_qrcode" style="background-color:white;width:auto;display: block;float:right;opacity: 0.9;"></span>     
+      <div class="clear"></div>
+    </div>
+    <div class="muen">
+      <div class="subnav">
+        <ul id="nuw">
+          <li class="one"><a href="/index.html">首页</a></li>
+          <li  class="one"><a href="/zaixianfalv.html">免费法律咨询</a></li>
+          <li class="one"><a href="/news/list.html">法制新闻</a></li>
+          <li class="one"><a href="/laws/list">法律法规</a>
+            <ul>
+              <li><a href="/laws/list?category=xingfa">刑法专栏</a></li>
+              <li><a href="/laws/list?category=minshangfa">民商法专栏</a></li>
+              <li><a href="/laws/list?category=xingzhengfa">行政法专栏</a></li>
+              <li><a href="/laws/list?category=others">其他</a></li>
+            </ul>
+          </li>
+          <li class="one"><a href="/aboutus.html">关于我们</a></li>
+        </ul>
+      </div>
+      <div class="sousuo">
+        <a href="/question/new" target='_self'>
+          <img src="/static/images/anniu_zhixun.png" border="0">
+        </a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  {% block content %}
+  {% endblock %}
+  
+       <fieldset style="width: auto; border-width: 1px;border-color: #bfbfbf;">
+         <legend>相关链接</legend>
+         &nbsp;&nbsp;&nbsp;
+         <a class="relative_link" target="_blank" href="http://eedszy.chinacourt.org/index.shtml">鄂尔多斯中级人民法院</a>&nbsp;
+         <a class="relative_link" target="_blank" href="http://www.ordos.jcy.gov.cn/">鄂尔多斯市人民检察院</a>&nbsp;
+         <a class="relative_link" target="_blank" href="http://www.gov.cn/flfg/">中国政府网-法律法规</a>
+       </fieldset>
+  <br />
+  <div class="bottom">
+    <div class="bottom_right"> 地址：中国内蒙古自治区鄂尔多斯市 邮政编码：017000 站长QQ：66072285
+  </div>
+  
+  <div class="juzhong" style="text-align: center;">
+  <div id="current_url_qrcode" style="display: block;">
+  </div>
+  </div>
+  
+</body>
+</html>
+

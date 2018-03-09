@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+{% block content %}
+{% autoescape Flase %}
+<div class="detail_title">
+    <div><strong>{{question.subject}}</strong></div>
+    <div>类别:{% if question.category == 'zixun' %}咨询{% elif question.category == 'qiuzhu'%}求助{% elif question.category == 'jianyi' %}建议{% endif %}&nbsp;更新时间:&nbsp;{{question.updated_at.strftime('%Y/%m/%d %H:%M')}}</div>
+</div>
+
+<div class="detail_body">
+  <p>
+    {{question.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}
+  </p>
+
+  <div class="split_line"><b>[ 回复 ]</b></div>
+  {% for a in question.answers %}
+  <div>
+
+    <fieldset>
+      <legend>
+        {% if a and a.contact%}{{a.contact.display_name}}{% endif %}于
+        {% if a and a.contact%}{{a.contact.updated_at.strftime('%Y/%m/%d %H:%M')}}{% endif %}回答
+      </legend>
+      {% if a %}{{a.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}{% endif %}
+    </fieldset>
+
+  </div>
+  {% endfor %}
+
+</div>
+
+
+{% endautoescape %}
+{% endblock %}

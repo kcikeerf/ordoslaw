@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+{% block content %}
+{% autoescape Flase %}
+<div class="detail_title">
+    <div><strong>{{law.subject}}</strong></div>
+    <div>
+更新时间:&nbsp;{{law.updated_at.strftime('%Y/%m/%d %H:%M')}}
+&nbsp;&nbsp;&nbsp;
+类别:
+{% if law.category == 'xingfa' %}
+    刑法
+{% elif law.category == 'minshangfa' %}
+    民商法
+{% elif law.category == 'xingzhengfa' %}
+    行政法
+{% elif law.category == 'others' %}
+    其他
+{% else %}
+    其他
+{% endif %}
+
+&nbsp;&nbsp;&nbsp;
+
+   </div>
+</div>
+
+<div class="detail_body">
+  <p>
+    {{law.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}
+  </p>
+</div>
+{% endautoescape %}
+{% endblock %}

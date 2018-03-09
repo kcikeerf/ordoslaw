@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+{% block content %}
+{% autoescape Flase %}
+<div class="detail_title">
+    <div><strong>{{news.subject}}</strong></div>
+    <div>更新时间:&nbsp;{{news.updated_at.strftime('%Y/%m/%d %H:%M')}}</div>
+</div>
+
+<div class="detail_body">
+  <p>
+    {{news.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}
+  </p>
+</div>
+{% endautoescape %}
+{% endblock %}

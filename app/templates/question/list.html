@@ -1,0 +1,68 @@
+{% autoescape Flase %}
+<span class="easyui-linkbutton" onclick="open_common_dialog('添加法律咨询', '/admin/dialog/question/new')">添加</span>
+{% for q in q_list  %}
+<div class="zaixianfalv_1">
+  <div class="zaixianfalv_1_title">
+    <div>
+    <span> 
+    <input id="question_{{q.id}}" type="hidden" value="{{q.id}}">
+    (<b>ID:</b> {{q.id}},&nbsp;
+    <b>名字:</b> {{q.contact.display_name}},&nbsp;
+    <b>类别:</b> {% if q.category == 'zixun' %}咨询{% elif q.category == 'qiuzhu'%}求助{% elif q.category == 'jianyi' %}建议{% endif %},&nbsp;
+    <b>QQ:</b> {{q.contact.qq}},&nbsp;
+    <b>微信:</b> {{q.contact.wechat}},&nbsp;
+    <b>电话:</b> {{q.contact.telephone}},&nbsp;
+    <b>邮箱:</b> {{q.contact.email}},&nbsp;
+    <b>地址:</b> {{q.contact.address}},&nbsp;
+    <b>邮编:</b> {{q.contact.postcode}},&nbsp;
+    于{{q.contact.created_at.strftime('%Y/%m/%d %H:%M')}} 咨询以下问题)
+    </span>
+    </div>
+    <div>
+    <span class="easyui-linkbutton"
+          data-options="" 
+          onclick="open_common_dialog('批准问题公布', '/admin/dialog/question/approve?id={{q.id}}')">
+      {% if q.approved %} 非显示 {% else %} 显示 {% endif %}
+    </span>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('编辑问题', '/admin/dialog/question/edit?id={{q.id}}')">
+      编辑
+    </span>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('删除问题', '/admin/dialog/question/delete?id={{q.id}}')">
+      删除
+    </span>
+    </div>
+  </div>
+  <div><h1>{{q.subject}}</h1></div>
+  <div class="zaixianfalv_1_nr">{{q.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}<br></div>
+  <br>
+  <div>
+    <span><u>[ 回复 ]</u></span>
+    <span class="easyui-linkbutton" onclick="open_common_dialog('回复问题:{{q.id}}', '/admin/dialog/answer/new?q_id={{q.id}}')">添加回复</span>
+  </div>
+  
+  {% for a in q.answers %}
+  <div> 
+
+    <fieldset>
+      <legend>
+        {% if a and a.contact%}{{a.contact.display_name}}{% endif %}于
+        {% if a and a.contact%}{{a.contact.updated_at.strftime('%Y/%m/%d %H:%M')}}{% endif %}回答（ID: {{a.id}}）
+        <span class="easyui-linkbutton" onclick="open_common_dialog('修改回复:{{a.id}}', '/admin/dialog/answer/edit?id={{a.id}}')">编辑</span>
+        <span class="easyui-linkbutton" onclick="open_common_dialog('删除回复:{{a.id}}', '/admin/dialog/answer/delete?id={{a.id}}')">删除</span>
+      </legend>
+      {% if a %}{{a.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}{% endif %}
+    </fieldset>
+
+  </div>
+  {% endfor %}  
+
+</div>
+{% endfor %}
+{% endautoescape %}
+
+
+{% import "admin/list_pagination.html" as lp %}
+{{ lp.fenye('question', '/admin/question/list', pagination) }}
+

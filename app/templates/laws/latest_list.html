@@ -1,0 +1,24 @@
+<div class="xingfa_nr">
+  <ul>
+
+{% for l in l_list %}
+     <li>
+     <a target="_blank" href="/laws/detail?id={{l.id}}">{{l.subject[:20]}}{% if l.subject.__len__() > 20 %}...{% endif %}</a>
+     <!--span>[
+{% if l.category == 'xingfa' %}
+    刑法
+{% elif l.category == 'minshangfa' %}
+    民商法
+{% elif l.category == 'xingzhengfa' %}
+    行政法
+{% elif l.category == 'others' %}
+    其他
+{% else %}
+    其他
+{% endif %}
+,{{l.updated_at.strftime('%Y/%m/%d %H:%M')}}]</span-->
+     </li>
+{% endfor %}
+
+  </ul>
+</div>

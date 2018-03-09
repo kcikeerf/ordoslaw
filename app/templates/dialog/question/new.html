@@ -1,0 +1,89 @@
+<div class="common_dialog_div">
+您确定提交以下问题吗？
+</div>
+
+<div class="common_dialog_content">
+  <form id="admin_question_new_form">
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit"></span>
+  <span class="common_dialog_right_span question_edit">*: 必添项</span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">名字：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=30 name="display_name" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">类别：</span>
+  <span class="common_dialog_right_span question_edit">
+    <select name="category">
+      <option value="zixun" selected>咨询</option>
+      <option value="qiuzhu">求助</option>
+      <option value="jianyi">建议</option>
+    </select>
+  </span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">QQ：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="qq" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">微信号：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="wechat" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">电话：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="telephone" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">邮箱：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=256 name="email" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">地址：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=256 name="address" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">邮编：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=15 name="postcode" value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">标题*：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" name="subject" maxlength=80 value=""></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">问题*：</span>
+  <span class="common_dialog_right_span question_edit">
+    <textarea name="question" value="" maxlength=1000 rows="10" cols="50" textarea="1000"></textarea></span>
+  </div>
+
+  </div>
+
+  </form>
+
+</div>
+
+<div class="common_dialog_div">
+    <a href="javascript:void(0)" 
+       class="easyui-linkbutton" 
+       onclick="post_from_question_panel('/admin/question/new', 'admin_question_new_form')">OK
+    </a>
+</div>

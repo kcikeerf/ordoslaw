@@ -1,0 +1,24 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+
+<div id='admin_tabs' class="easyui-tabs" style="width:100%;height:auto;" data-options="cache:true">
+  <div title="法制新闻" style="padding:10px">
+    <div id="admin_news"
+         class='easyui-panel' 
+          data-options="href: '/admin/news/list', method:'GET', animate:true, onLoad: function(){onAdminPanelListLoad('news','/admin/news/list');}">
+    </div>
+  </div>
+  <div title="法律法规" style="padding:10px">
+    <div id="admin_laws"
+         class='easyui-panel' 
+         data-options="href: '/admin/laws/list', method:'GET', animate:true, onLoad: function(){onAdminPanelListLoad('laws','/admin/laws/list');}">
+    </div>
+  </div>
+  <div title="免费法律咨询" style="padding:10px"> 
+    <div id='admin_question'
+         class='easyui-panel' 
+         data-options="href: '/admin/question/list', method:'GET', animate:true, onLoad: function(){onAdminPanelListLoad('question','/admin/question/list');}">
+    </div>
+  </div>
+</div>
+{% endblock %}

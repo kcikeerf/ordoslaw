@@ -1,0 +1,12 @@
+<div class="xingfa_nr">
+  <ul>
+
+{% for n in n_list %}
+     <li>
+     <a target="_blank" href="/news/detail?id={{n.id}}">{{n.subject[:15]}}{% if n.subject.__len__() > 15 %}&nbsp...{% endif %}</a>
+     <span>[{{n.updated_at.strftime('%Y/%m/%d')}}]</span>
+     </li>
+{% endfor %}
+
+  </ul>
+</div>

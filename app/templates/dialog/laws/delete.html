@@ -1,0 +1,19 @@
+<div class="common_dialog_div">
+您确定删除以下法律记文吗？
+</div>
+
+<div class="common_dialog_content">
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>ID:</b></span>
+  <span class="common_dialog_right_span">{{laws.id}}</span></div>
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>题目:</b></span>
+  <span class="common_dialog_right_span">{{laws.subject}}</span></div>
+</div>
+
+<div class="common_dialog_div">
+  <form id="laws_delete_form">
+    <input type="hidden" name='id' value='{{laws.id}}' />
+  </form>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="post_from_laws_panel('/admin/laws/delete', 'laws_delete_form')">OK</a>
+</div>

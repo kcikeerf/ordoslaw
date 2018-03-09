@@ -1,0 +1,13 @@
+<div class="common_dialog_div">
+您确定添加一下法律记文吗？
+</div>
+
+{% include 'dialog/laws/laws_form.html' %}
+
+<div class="common_dialog_div">
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       onclick="post_from_laws_panel('/admin/laws/new', 'laws_form')">OK
+    </a>
+</div>
+

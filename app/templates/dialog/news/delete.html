@@ -1,0 +1,19 @@
+<div class="common_dialog_div">
+您确定删除以下新闻吗？
+</div>
+
+<div class="common_dialog_content">
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>ID:</b></span>
+  <span class="common_dialog_right_span">{{news.id}}</span></div>
+<div class="common_dialog_div">
+  <span class="common_dialog_left_span"><b>题目:</b></span>
+  <span class="common_dialog_right_span">{{news.subject}}</span></div>
+</div>
+
+<div class="common_dialog_div">
+  <form id="news_delete_form">
+    <input type="hidden" name='id' value='{{news.id}}' />
+  </form>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="post_from_news_panel('/admin/news/delete', 'news_delete_form')">OK</a>
+</div>

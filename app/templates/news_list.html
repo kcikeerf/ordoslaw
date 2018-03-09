@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+{% block content %}
+
+<div class="right_title">
+<h2>法制新闻</h2>
+</div>
+
+<div class="xingfa_nr">
+  <ul>
+
+{% for n in n_list %}
+     <li><a target="_blank" href="/news/detail?id={{n.id}}">{{n.subject}}</a><span>[更新时间:{{n.updated_at.strftime('%Y/%m/%d %H:%M')}}]</span></li>
+{% endfor %}
+
+  </ul>
+</div>
+
+{% import "list_pagination.html" as lp %}
+{{ lp.fenye('/news/list', pagination) }}
+
+{% endblock %}

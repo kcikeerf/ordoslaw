@@ -1,0 +1,14 @@
+<div class="fangye" style="border:none; margin:0px;">
+  <div class="fanye_center">
+    <input id="zaixianfalv_total_pages" type="hidden" value="{{pagination.pages}}">
+    <form id='zaixianfalv_pagination_form' method='GET' action='/zaixianfalv'>
+      <span>总计&nbsp;{{pagination.total}}&nbsp;个问题</span>&nbsp;|&nbsp;
+      <span>当前<input name="page" type="text"  class="fanye_input" value="{{pagination.page}}">页/全部&nbsp;{{pagination.pages}}&nbsp;页</span>&nbsp;|&nbsp;
+      <span class="fanye_pointer" id="zaixianfalv_first">{% if pagination.has_prev  %}<b>&lt;&lt;</b>{% else %}&lt;&lt;{% endif %}</span>
+      <span class="fanye_pointer" id="zaixianfalv_forward">{% if pagination.has_prev  %}<b>&lt;</b>{% else %}&lt;{% endif %}</span>
+      <span class="fanye_pointer" id="zaixianfalv_backward">{% if pagination.has_next  %}<b>&gt;</b>{% else %}&gt;{% endif %}</span>
+      <span class="fanye_pointer" id="zaixianfalv_last">{% if pagination.has_next  %}<b>&gt;&gt;</b>{% else %}&gt;&gt;{% endif %}</span>
+    </form>
+  </div>
+</div>
+

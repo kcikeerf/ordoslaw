@@ -1,0 +1,37 @@
+<div class="common_dialog_content">
+  <form id="laws_form">
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span laws"></span>
+  <span class="common_dialog_right_span laws">*: 必添项</span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span laws">标题*：</span>
+  <span class="common_dialog_right_span laws">
+    <input type="text" name="subject" value="{% if laws and laws.subject %}{{laws.subject}}{% endif %}" maxlength="256"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span laws">类别*：</span>
+  <span class="common_dialog_right_span laws">
+    <select name="category" style="width:100px;">
+      <option value="xingfa" {% if laws and laws.category == 'xingfa' %} selected {% endif %}>刑法</option>
+      <option value="minshangfa" {% if laws and laws.category == 'minshangfa' %} selected {% endif %}>民商法</option>
+      <option value="xingzhengfa" {% if laws and laws.category == 'xingzhengfa' %} selected {% endif %}>行政法</option>
+      <option value="others" {% if laws and laws.category == 'others' %} selected {% endif %}>其他</option>
+    </select>
+  </span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span laws">正文*：</span>
+  <span class="common_dialog_right_span laws">
+    <textarea name="laws" value="" rows="10" cols="50" maxlength="1000">{% if laws and laws.body %}{{laws.body}}{% endif %}</textarea></span>
+  <input type="hidden" name="id" value="{% if laws and laws.id %}{{laws.id}}{% endif %}">
+  </div>
+
+  </form>
+
+</div>
+

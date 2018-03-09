@@ -1,0 +1,49 @@
+.common_dialog_content{
+  text-align: center; 
+  width: 99%; 
+  height: auto;
+  border: solid 1px black;  
+}
+.common_dialog_div {
+  width: 100;
+  text-align: center;
+}
+
+.common_dialog_left_span {
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+}
+.common_dialog_right_span {
+  display: inline-block;
+  width: 49%;
+  text-align: left;
+}
+
+.common_dialog_left_span.question_edit,
+.common_dialog_left_span.answer,
+.common_dialog_left_span.news,
+.common_dialog_left_span.laws
+{
+  display: inline-block;
+  width: 20%;
+  text-align: right;
+  vertical-align: top;
+}
+.common_dialog_right_span.question_edit,
+.common_dialog_right_span.answer,
+.common_dialog_right_span.news,
+.common_dialog_right_span.laws
+{
+  display: inline-block;
+  width: 78%;
+  text-align: left;
+}
+
+.common_dialog_right_span.question_edit input,
+.common_dialog_right_span.question_edit select,
+.common_dialog_right_span.question_edit textarea
+{
+  width: 90%;
+}
+

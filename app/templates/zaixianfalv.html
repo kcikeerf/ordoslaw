@@ -1,0 +1,52 @@
+{% extends './base.html' %}
+{% block content %}
+        <div class="right_title"> 
+          <span style="width: 90%;float:left;"><strong>免费法律咨询</strong></span>
+          <!--span style="width:auto;float:left;">
+               <a href="question/new" target='_self'>
+                 <img src="static/images/anniu_zhixun.gif" border="0">
+               </a>
+          </span-->
+        </div>
+        <div class="zaixianfalv">
+
+{% autoescape Flase %}
+{% for q in q_list  %}
+          <div class="zaixianfalv_1">
+            <div class="zaixianfalv_1_title">{% if q.contact.display_name  %}{{q.contact.display_name}}{% else %}匿名{% endif %}&nbsp;于{{q.contact.created_at.strftime('%Y/%m/%d %H:%M')}} {% if q.category == 'zixun' %}咨询{% elif q.category == 'qiuzhu'%}求助{% elif q.category == 'jianyi' %}建议{% endif %}：</div>
+            <div class="zaixianfalv_1_nr">
+              <h1><a target="_blank" href="/question/detail?id={{q.id}}">{{q.subject}}</a></h1>
+              {{q.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}<br>
+            </div>
+
+            <!--list answers-->
+  <br>
+  <div>
+    <span><u>[ 回复 ]</u></span>
+  </div>
+
+  {% for a in q.answers %}
+  <div>
+
+    <fieldset>
+      <legend>
+        {% if a and a.contact%}{{a.contact.display_name}}{% endif %}于
+        {% if a and a.contact%}{{a.contact.updated_at.strftime('%Y/%m/%d %H:%M')}}{% endif %}回答
+      </legend>
+      {% if a %}{{a.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}{% endif %}
+    </fieldset>
+
+  </div>
+  {% endfor %}
+  
+          </div>
+{% endfor %}
+{% endautoescape %}
+
+
+        </div>
+
+{% import "list_pagination.html" as lp %}
+{{ lp.fenye('/zaixianfalv', pagination) }}
+
+{% endblock %}

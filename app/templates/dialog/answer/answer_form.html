@@ -1,0 +1,47 @@
+<div class="common_dialog_content">
+  <form id="answer_form">
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer"></span>
+  <span class="common_dialog_right_span answer">*: 必添项</span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer">名字*：</span>
+  <span class="common_dialog_right_span answer">
+    <input type="text" name="display_name" value="{% if answer and answer.contact.display_name %}{{answer.contact.display_name}}{% endif %}"></span>
+  </div>
+
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer">QQ：</span>
+  <span class="common_dialog_right_span answer">
+    <input type="text" name="qq" value="{% if answer and  answer.contact.qq  %}{{answer.contact.qq}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer">电话：</span>
+  <span class="common_dialog_right_span answer">
+    <input type="text" name="telephone" value="{% if answer and answer.contact.telephone  %}{{answer.contact.telephone}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer">邮箱：</span>
+  <span class="common_dialog_right_span answer">
+    <input type="text" name="email" value="{% if answer and answer.contact.email %}{{answer.contact.email}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span answer">回答*：</span>
+  <span class="common_dialog_right_span answer">
+    <textarea name="answer" value="" rows="10" cols="50" maxlength="1000">{% if answer and answer.body %}{{answer.body}}{% endif %}</textarea></span>
+  <input type="hidden" name="id" value="{% if answer and answer.id %}{{answer.id}}{% endif %}">
+  <input type="hidden" name="q_id" value="{% if q_id %}{{q_id}}{% endif %}">
+  </div>
+
+  </div>
+
+  </form>
+
+</div>
+

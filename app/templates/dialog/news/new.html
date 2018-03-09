@@ -1,0 +1,13 @@
+<div class="common_dialog_div">
+您确定添加一下新闻吗？
+</div>
+
+{% include 'dialog/news/news_form.html' %}
+
+<div class="common_dialog_div">
+    <a href="javascript:void(0)"
+       class="easyui-linkbutton"
+       onclick="post_from_news_panel('/admin/news/new', 'news_form')">OK
+    </a>
+</div>
+

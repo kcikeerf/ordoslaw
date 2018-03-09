@@ -1,0 +1,30 @@
+{% autoescape Flase %}
+<span class="easyui-linkbutton" onclick="open_common_dialog('添加法制新闻', '/admin/dialog/news/new')">添加</span>
+{% for n in n_list  %}
+<div class="zaixianfalv_1">
+  <div class="zaixianfalv_1_title">
+    <div>
+    <span> 
+    <input id="news_{{n.id}}" type="hidden" value="{{n.id}}">
+    (<b>标题:</b> {{n.subject}},&nbsp;
+    <b>发表时间：</b> {{n.created_at.strftime('%Y/%m/%d %H:%M')}})
+    </span>
+    </div><div>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('编辑法制新闻', '/admin/dialog/news/edit?id={{n.id}}')">
+      编辑
+    </span>
+    <span class="easyui-linkbutton" 
+          onclick="open_common_dialog('删除法制新闻', '/admin/dialog/news/delete?id={{n.id}}')">
+      删除
+    </span>
+    </div>
+  </div>
+  <div class="zaixianfalv_1_nr">{{n.body.replace('\n', '<br>').replace(' ', '&nbsp;')}}<br></div>
+</div>
+{% endfor %}
+{% endautoescape %}
+
+{% import "admin/list_pagination.html" as lp %}
+{{ lp.fenye('news', '/admin/news/list', pagination) }}
+

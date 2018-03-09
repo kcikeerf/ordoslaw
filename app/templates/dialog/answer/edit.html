@@ -1,0 +1,12 @@
+<div class="common_dialog_div">
+您修改此回答吗？
+</div>
+
+{% include 'dialog/answer/answer_form.html' %}
+
+<div class="common_dialog_div">
+    <a href="javascript:void(0)" 
+       class="easyui-linkbutton" 
+       onclick="post_from_answer_panel('/admin/answer/edit', 'answer_form')">OK
+    </a>
+</div>

@@ -1,0 +1,15 @@
+<div class="xingfa_nr">
+  <ul>
+
+{% for n in n_list %}
+     <li class="question">
+     <span class="span_left">
+       [{% if n.category == 'zixun' %}咨询{% elif n.category == 'qiuzhu'%}求助{% elif n.category == 'jianyi' %}建议{% endif %}]
+     </span>
+     <a target="_blank" href="/question/detail?id={{n.id}}">&nbsp;{{n.subject[:30]}}{% if n.subject.__len__() > 30 %}&nbsp...{% endif %}</a>
+     <span>[{{n.created_at.strftime('%Y/%m/%d %H:%M')}}]</span>
+     </li>
+{% endfor %}
+
+  </ul>
+</div>

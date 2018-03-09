@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{% block content %}
+
+<div class="right_title">
+{% if category == 'xingfa' %}
+    <h2>刑法专栏</h2>
+{% elif category == 'minshangfa' %}
+    <h2>民商法专栏</h2>
+{% elif category == 'xingzhengfa' %}
+    <h2>行政法专栏</h2>
+{% elif category == 'others' %}
+    <h2>其他</h2>
+{% else %}
+    <strong>法律法规</strong>
+{% endif %}
+</div>
+
+<div class="xingfa_nr">
+  <ul>
+
+{% for l in l_list %}
+     <li><a target="_blank" href="/laws/detail?id={{l.id}}">{{l.subject}}</a><span>[类别：
+{% if l.category == 'xingfa' %}
+    刑法
+{% elif l.category == 'minshangfa' %}
+    民商法
+{% elif l.category == 'xingzhengfa' %}
+    行政法
+{% elif l.category == 'others' %}
+    其他
+{% else %}
+    其他
+{% endif %}
+
+<!--，更新时间:{{l.updated_at.strftime('%Y/%m/%d %H:%M')}}-->]</span></li>
+{% endfor %}
+
+  </ul>
+</div>
+
+{% import "list_pagination.html" as lp %}
+{{ lp.fenye('/laws/list', pagination) }}
+
+{% endblock %}

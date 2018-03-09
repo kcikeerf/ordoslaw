@@ -1,0 +1,90 @@
+<div class="common_dialog_div">
+您确定修改以下问题吗？
+</div>
+
+<div class="common_dialog_content">
+  <form id="question_edit_form">
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit"></span>
+  <span class="common_dialog_right_span question_edit">*: 必添项</span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">名字：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=30 name="display_name" value="{% if  question.contact.display_name %}{{question.contact.display_name}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">类别：</span>
+  <span class="common_dialog_right_span question_edit">
+    <select name="category">
+      <option value="zixun" {% if question.category == 'zixun' %} selected {% endif %}>咨询</option>
+      <option value="qiuzhu" {% if question.category == 'qiuzhu' %} selected  {% endif %}>求助</option>
+      <option value="jianyi" {% if question.category == 'jianyi' %} selected {% endif %}>建议</option>
+    </select>
+  </span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">QQ：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="qq" value="{% if  question.contact.qq  %}{{question.contact.qq}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">微信号：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="wechat" value="{% if  question.contact.wechat  %}{{question.contact.wechat}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">电话：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=100 name="telephone" value="{% if  question.contact.telephone  %}{{question.contact.telephone}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">邮箱：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=256 name="email" value="{% if  question.contact.email %}{{question.contact.email}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">地址：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=256 name="address" value="{% if  question.contact.address %}{{question.contact.address}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">邮编：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=15  name="postcode" value="{% if  question.contact.postcode %}{{question.contact.postcode}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">标题*：</span>
+  <span class="common_dialog_right_span question_edit">
+    <input type="text" maxlength=80 name="subject" value="{% if  question.subject %}{{question.subject}}{% endif %}"></span>
+  </div>
+
+  <div class="common_dialog_div">
+  <span class="common_dialog_left_span question_edit">问题*：</span>
+  <span class="common_dialog_right_span question_edit">
+    <textarea name="question" maxlength=1000 value="" rows="10" cols="50" textarea="1000">{% if question.body %}{{question.body}}{% endif %}</textarea></span>
+  <input type="hidden" name="id" value="{{question.id}}">
+  </div>
+
+  </div>
+
+  </form>
+
+</div>
+
+<div class="common_dialog_div">
+    <a href="javascript:void(0)" 
+       class="easyui-linkbutton" 
+       onclick="post_from_question_panel('/admin/question/edit', 'question_edit_form')">OK
+    </a>
+</div>

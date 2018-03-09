@@ -1,0 +1,8 @@
+{% extends './base.html' %}
+{% block content %}
+{% for msg in get_flashed_messages() %}
+<div style='background-color: #C3FDB8; text-align: center;'>{{ msg[1:] }}</div>
+<div style='height: 1px; display: block-inline;'></div>
+{% endfor %}
+{% endblock %}
+
